@@ -4,10 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:replace="~{stylesImport :: bootStyle}">
+
     <title>Song</title>
 </head>
 
 <body>
+    <th:block th:insert="~{nav :: menu}"></th:block>
+
     <h1 th:text="${song.getTitle()}"></h1>
 </body>
 
