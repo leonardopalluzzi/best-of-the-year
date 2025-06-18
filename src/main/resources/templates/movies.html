@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+</head>
+
+<body>
+    <h1>Movie List</h1>
+    <div th:each="movie : ${movieList}">
+        <div th:object="${movie}">
+            <h1>Titolo: [[*{title}]]</h1>
+            <a th:href="@{/movie/{movieId}(movieId=*{getId()})}">visualizza dettagli</a>
+        </div>
+    </div>
+</body>
+
+</html>
