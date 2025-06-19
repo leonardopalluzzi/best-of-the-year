@@ -15,9 +15,14 @@
     <main>
         <section>
             <div class="container w-50 text-center">
-                <h1 class="my-4">You are listening to:</h1>
-                <h1 class="my-3" th:text="${song.getTitle()}"></h1>
-                <i class="bi bi-headphones fs-1"></i>
+                <th:block th:if="${song != null}">
+                    <h1 class="my-4">You are listening to:</h1>
+                    <h1 class="my-3" th:text="${song.getTitle()}"></h1>
+                    <i class="bi bi-headphones fs-1"></i>
+                </th:block>
+                <th:block th:unless="${song != null}">
+                    <h2 class="alert alert-warning">No media found</h2>
+                </th:block>
             </div>
         </section>
     </main>

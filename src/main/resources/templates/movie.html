@@ -16,9 +16,15 @@
     <main>
         <section>
             <div class="container w-50 text-center">
-                <h1 class="my-4">You are watching:</h1>
-                <h1 class="my-3" th:text="${movie.getTitle()}"></h1>
-                <i class="bi bi-film fs-1"></i>
+                <th:block th:if="${movie != null}">
+                    <h1 class="my-4">You are watching:</h1>
+                    <h1 class="my-3" th:text="${movie.getTitle()}"></h1>
+                    <i class="bi bi-film fs-1"></i>
+                </th:block>
+
+                <th:block th:unless="${movie != null}">
+                    <h2 class="alert alert-warning">No media found</h2>
+                </th:block>
             </div>
         </section>
     </main>
