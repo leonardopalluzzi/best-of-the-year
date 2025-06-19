@@ -16,6 +16,9 @@
         <section>
             <div class="container w-50 text center my-5">
                 <h1 class="my-4">Songs List</h1>
+                <th:block th:unless="${songsList.size() > 0}">
+                    <p class="alert alert-warning">No elements in the list</p>
+                </th:block>
                 <div class="my-3" th:each="song : ${songsList}">
                     <div th:object="${song}">
                         <th:block th:replace="~{fragments/card :: card(*{getTitle()}, *{getId()}, song)}" />
