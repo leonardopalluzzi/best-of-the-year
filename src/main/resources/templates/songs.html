@@ -4,21 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link th:replace="~{stylesImport :: bootStyle}">
+    <link th:replace="~{fragments/stylesImport :: bootStyle}">
 
     <title>Movies</title>
 </head>
 
 <body>
-    <th:block th:insert="~{nav :: menu}"></th:block>
+    <th:block th:insert="~{fragments/nav :: menu}"></th:block>
 
-    <h1>Songs List</h1>
-    <div th:each="song : ${songsList}">
-        <div th:object="${song}">
-            <h1>Titolo: [[*{getTitle()}]]</h1>
-            <a th:href="@{/song/{songId}(songId=*{getId()})}">visualizza dettagli</a>
-        </div>
-    </div>
+    <main>
+        <section>
+            <div class="container w-50 text center my-5">
+                <h1 class="my-4">Songs List</h1>
+                <div class="my-3" th:each="song : ${songsList}">
+                    <div th:object="${song}">
+                        <th:block th:replace="~{fragments/card :: card(*{getTitle()}, *{getId()}, song)}" />
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
 
 
 </body>

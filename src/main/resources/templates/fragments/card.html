@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleafe.org">
+
+<div class="card" th:fragment="card(title, id, link)">
+    <div class="card-body">
+        <div class="row">
+            <h3 class="col-8">[[${title}]]</h3>
+            <a class="col-4 btn btn-primary" th:href="@{{link}/{songId}(songId=${id}, link=${link})}">visualizza
+                dettagli</a>
+        </div>
+
+    </div>
+</div>

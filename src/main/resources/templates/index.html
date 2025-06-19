@@ -4,13 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link th:replace="~{stylesImport :: bootStyle}">
-    <title>Document</title>
+    <link th:replace="~{fragments/stylesImport :: bootStyle}">
+    <title>Home</title>
 </head>
 
 <body>
-    <th:block th:insert="~{nav :: menu}"></th:block>
-    <h1>Best of the year by [[${name}]]</h1>
+    <th:block th:insert="~{fragments/nav :: menu}"></th:block>
+    <main>
+        <section>
+            <div class="container text-center w-50">
+                <h1 class="my-5">Best of the year by [[${name}]]</h1>
+                <img class="w-100 my-3" th:src="@{/img/home-img.jpg}" alt="home page image">
+                <p class="border rounded-5 p-4 my-3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio veritatis voluptate consectetur
+                    nulla blanditiis excepturi eligendi iure voluptatum optio quo dicta nihil aliquid labore aliquam
+                    officia dolore, aperiam nesciunt corporis libero facere. Accusantium ratione quisquam blanditiis
+                    fuga consectetur fugiat voluptatibus ipsa voluptates dolorem facilis nam dignissimos, numquam
+                    similique in eum.
+                </p>
+            </div>
+        </section>
+    </main>
+
 </body>
 
 </html>

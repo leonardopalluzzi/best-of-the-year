@@ -4,15 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link th:replace="~{stylesImport :: bootStyle}">
+    <link th:replace="~{fragments/stylesImport :: bootStyle}">
 
     <title>Movie</title>
 </head>
 
 <body>
-    <th:block th:insert="~{nav :: menu}"></th:block>
+    <th:block th:insert="~{fragments/nav :: menu}"></th:block>
 
-    <h1 th:text="${movie.getTitle()}"></h1>
+
+    <main>
+        <section>
+            <div class="container w-50 text-center">
+                <h1 class="my-4">Stai Guardando:</h1>
+                <h1 class="my-3" th:text="${movie.getTitle()}"></h1>
+                <i class="bi bi-film fs-1"></i>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
